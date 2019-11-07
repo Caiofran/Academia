@@ -57,7 +57,7 @@ void cadastrarAluno()
 {
   struct aluno aluno;
   
-  printf("Codigo do aluno: ",);
+  printf("Codigo do aluno: ");
   printf("Informe o nome do aluno: ");
   getchar();
   fgets(aluno.nome,300,stdin);
@@ -86,7 +86,7 @@ void cadastrarProfessor()
 
   FILE *fp;
 
-  fp = fopen("professores.txt", "w");
+  fp = fopen("professor.txt", "w");
 
   fprintf(fp,"Informe o nome do Professor: ");
   getchar();

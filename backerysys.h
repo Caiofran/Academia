@@ -46,4 +46,10 @@ void listSales();
 // Zera ou diminui a divida do cliente
 void quitarDivida();
 
+//Casdratrar o aluno
+void cadastrarAluno();
+
+//Casdratrar o professor
+void cadastrarProfessor();
+
 #endif

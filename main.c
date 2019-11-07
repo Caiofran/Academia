@@ -68,7 +68,7 @@ int main ()
              //void cadastrarProfessor()
              if(!verificarquivo(":aluno.txt"))
             { 
-					    newFile(":cliente.txt","w");
+					    newFile(":professor.txt","w");
 					    cadastrarProfessor();
 				    }// Executa a função
 				    else {
