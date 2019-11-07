@@ -51,13 +51,19 @@ int lerOpcao()
 	scanf("%d", &opcao);
 
 	return opcao;
-}
+} 
+ 
 
 void cadastrarAluno()
 {
   struct aluno aluno;
+  int ultumoid = pegaUltimoID("alunos.txt");
   
-  printf("Codigo do aluno: ");
+  FILE *fp = fopen("alunos.txt","w");
+  fprintf(fp,"%d",aluno.id);
+  aluno.id = ultumoid + 1;
+  printf("%d\n",aluno.id);
+  
   printf("Informe o nome do aluno: ");
   getchar();
   fgets(aluno.nome,300,stdin);
@@ -86,24 +92,25 @@ void cadastrarProfessor()
 
   FILE *fp;
 
-  fp = fopen("professor.txt", "w");
+  fp = fopen("professor.txt", "a"); //append
 
-  fprintf(fp,"Informe o nome do Professor: ");
+  printf("Informe o nome do Professor: ");
   getchar();
   fgets(professor.nome,300,stdin);
 
-  fprintf(fp,"Informe seu cpf:");
+  printf("Informe seu cpf:");
   getchar();
   fgets(professor.cpf,15,stdin);
 
-  fprintf(fp,"Informe o Telefone: ");
+  printf("Informe o Telefone: ");
   getchar();
   fgets(professor.telefone,50, stdin);
 
-  fprintf(fp,"Informe seu email: ");
+  printf("Informe seu email: ");
   getchar();
   fgets(professor.email,100,stdin);
   
+  fprintf(fp,"%s %s %s %s", professor.nome, professor.cpf, professor.telefone, professor.email);
 }
 /* Função newFile
  * --------------
@@ -133,4 +140,8 @@ int verificarquivo(char meuarquivo[]){
 void salvarAula(aulas)
 {
 
+}
+
+int pegaUltimoID("alunos.txt"){
+  
 }
