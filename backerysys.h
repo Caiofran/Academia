@@ -52,4 +52,7 @@ void cadastrarAluno();
 //Casdratrar o professor
 void cadastrarProfessor();
 
+//verificando o id
+int pegaUltimoID();
+
 #endif

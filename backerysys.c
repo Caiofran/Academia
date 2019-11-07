@@ -57,10 +57,9 @@ int lerOpcao()
 void cadastrarAluno()
 {
   struct aluno aluno;
-  int ultumoid = pegaUltimoID("alunos.txt");
   
-  FILE *fp = fopen("alunos.txt","w");
-  fprintf(fp,"%d",aluno.id);
+  int ultumoid = pegaUltimoID(aluno.id);
+  
   aluno.id = ultumoid + 1;
   printf("%d\n",aluno.id);
   
@@ -82,6 +81,8 @@ void cadastrarAluno()
 
   FILE *fp = fopen("alunos.txt","w");
   fprintf(fp,"%d %s %s %s %s",aluno.id,aluno.nome,aluno.cpf,aluno.telefone,aluno.email);
+
+  
   
 }
 
@@ -142,6 +143,13 @@ void salvarAula(aulas)
 
 }
 
-int pegaUltimoID("alunos.txt"){
-  
+int pegaUltimoID(struct aluno aluno){
+int id;
+ FILE *fp = fopen("alunos.txt","r");
+ 
+
+//fprintf(fp,"%d",id);
+return id;
 }
+ 
+
