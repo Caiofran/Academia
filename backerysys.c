@@ -28,7 +28,8 @@ struct turma{
   char dia;
   int id_prof;
   int idades;
-  
+  int max;
+  int min;
 
 };
 
@@ -73,8 +74,9 @@ void cadastrarAluno()
   getchar();
   fgets(aluno.email,100,stdin);
 
-  FILE *fp = fopen(fp,"alunos
-  %d %s %s %s %s",aluno.id,aluno.nome,aluno.cpf,aluno.telefone,aluno.email);
+  FILE *fp = fopen("alunos.txt","w");
+  fprintf(fp,"%d %s %s %s %s",aluno.id,aluno.nome,aluno.cpf,aluno.telefone,aluno.email);
+  
 }
 
 
@@ -82,19 +84,23 @@ void cadastrarProfessor()
 {
   struct aluno professor;
 
-  printf("Informe o nome do Professor: ");
+  FILE *fp;
+
+  fp = fopen("professores.txt", "w");
+
+  fprintf(fp,"Informe o nome do Professor: ");
   getchar();
   fgets(professor.nome,300,stdin);
 
-  printf("Informe seu cpf:");
+  fprintf(fp,"Informe seu cpf:");
   getchar();
   fgets(professor.cpf,15,stdin);
 
-  printf("Informe o Telefone: ");
+  fprintf(fp,"Informe o Telefone: ");
   getchar();
   fgets(professor.telefone,50, stdin);
 
-  printf("Informe seu email: ");
+  fprintf(fp,"Informe seu email: ");
   getchar();
   fgets(professor.email,100,stdin);
   

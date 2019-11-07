@@ -24,6 +24,14 @@ struct aula{
 	struct aluno alunos[CAPACIDADE_MAXIMA];
 };
 
+struct turma{
+  char dia;
+  int id_prof;
+  int idades;
+  int max;
+  int min;
+};
+
 // **aqui vão os protótipos de suas funções**
 
 // por exemplo, uma função para salvar as aulas em um arquivo
