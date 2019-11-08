@@ -30,7 +30,6 @@ struct turma{
   int idades;
   int max;
   int min;
-
 };
 
 int lerOpcao()
